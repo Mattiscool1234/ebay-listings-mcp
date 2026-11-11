@@ -1,0 +1,15 @@
+services:
+  ebay-mcp:
+    build: .
+    ports:
+      - "8787:8787"
+    env_file:
+      - .env
+    environment:
+      TOKEN_STORE_PATH: /data/ebay-tokens.enc
+    volumes:
+      - ebay-mcp-data:/data
+    restart: unless-stopped
+
+volumes:
+  ebay-mcp-data:

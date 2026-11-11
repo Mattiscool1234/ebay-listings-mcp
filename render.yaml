@@ -1,0 +1,24 @@
+# Render Blueprint. Secrets are entered in the dashboard (sync: false) and are not stored in git.
+services:
+  - type: web
+    name: ebay-listings-mcp
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: EBAY_ENV
+        value: production
+      - key: EBAY_CLIENT_ID
+        sync: false
+      - key: EBAY_CLIENT_SECRET
+        sync: false
+      - key: EBAY_RU_NAME
+        sync: false
+      - key: TOKEN_ENCRYPTION_KEY
+        sync: false
+      - key: MCP_AUTH_TOKEN
+        sync: false
+      - key: EBAY_REFRESH_TOKEN
+        sync: false

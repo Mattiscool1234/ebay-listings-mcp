@@ -1,0 +1,12 @@
+node_modules/
+dist/
+data/
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+agent-tools/
+*.enc
+*.lock
+!package-lock.json
